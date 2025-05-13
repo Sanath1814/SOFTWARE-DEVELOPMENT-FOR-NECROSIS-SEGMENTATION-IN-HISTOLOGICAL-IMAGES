@@ -1,0 +1,37 @@
+Programme pour classer et trier rapidement les images d'un dataset à donner en entrée à une IA.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Initialisation :
+
+-Placez le fichier "Viewer.exe", le dossier "build" et le dossier "datasets" dans le même dossier.
+-Assurez vous d'avoir dans votre dossier "datasets" vos images (.png, .jpg, .jpeg, .bmp, .gif, ou .tif).
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Utilisation :
+
+-Lancez l'exécutable viewer.exe.
+-Vous pouvez sélectionner une image en cliquant dessus avec clic gauche, ou en les survolant avec un clic gauche prolongé.
+-Cliquez sur le bouton "Non-Nécrose" ou sur la touche "R", puis sélectionnez les images que vous souhaitez classer en Non-Nécrose. Celles-ci se colorient en rouge.
+-Cliquez sur le bouton "Nécrose" ou sur la touche "N", pour sélectionner des images en Nécrose, en vert.
+-Cliquez sur le bouton "Autres" ou sur la touche "J", pour sélectionner des images en Autres, en jaunes. Cela peut être utile pour classer tout ce qui n'est pas une tumeur ou une nécrose, comme les artéfacts ou tissu normaux par exemple.
+-Cliquez sur le bouton "Douteux" ou sur la touche "V", pour sélectionner des images en Douteux, en violet. Cela peut être utile pour classer tout ce que le modèle ne doit pas prendre en compte pour son entraînement, comme les tuiles qui contiennent plusieurs types de cellules.
+-Cliquez sur le bouton "Zoom" ou sur la touche "Ctrl", puis cliquez sur une image pour l'afficher en plus grande.
+
+-Effectuer un clic droit sur une image, ou survolez plusieurs images avec un clic droit prolongé pour réinitialiser la classe des tuiles.
+
+-Une fois le classement fini, vérifiez que toutes les images soient bien classées puis cliquez sur le bouton Terminé.
+ 
+-Elles sont ensuite automatiquement déplacées dans les dossiers Necrotic, Viable, Other et Doubtful correspondants.
+Ces dossiers sont créés s'ils n'existent pas déjà.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Auteur : El Idrissi Sami
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Commandes pour télécharger les dépendances du fichier python :
+-pip install matplotlib
+-pip install tk
+Si besoin de regénérer le exe : pyinstaller --clean --noconsole --onefile viewer.py

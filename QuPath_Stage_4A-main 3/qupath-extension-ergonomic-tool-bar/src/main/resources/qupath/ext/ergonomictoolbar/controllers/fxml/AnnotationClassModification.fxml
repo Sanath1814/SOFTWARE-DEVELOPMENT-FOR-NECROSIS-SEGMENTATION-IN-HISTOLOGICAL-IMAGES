@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="200.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+      <Label alignment="CENTER" layoutY="30.0" prefHeight="26.0" prefWidth="301.0" text="Select a class">
+          <font>
+              <Font size="24.0" />
+          </font>
+      </Label>
+       <ComboBox fx:id="comboBoxClasses" layoutX="31.0" layoutY="85.0" prefHeight="30.0" prefWidth="240.0" />
+       <Button layoutX="115.0" layoutY="132.0" mnemonicParsing="false" onAction="#confirmNewClass" prefHeight="30.0" prefWidth="70.0" text="Confirm" />
+      <Label fx:id="labelError" alignment="CENTER" contentDisplay="CENTER" layoutX="36.0" layoutY="162.0" prefHeight="27.0" prefWidth="226.0" textAlignment="CENTER" textFill="RED" />
+</AnchorPane>

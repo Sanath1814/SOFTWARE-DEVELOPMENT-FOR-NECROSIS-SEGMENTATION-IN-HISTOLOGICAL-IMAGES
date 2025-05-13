@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="262.0" prefWidth="391.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+    <CheckBox fx:id="CheckBox_GraphDisplay" layoutX="293.0" layoutY="21.0" mnemonicParsing="false" text="Save Graph"/>
+    <TextField fx:id="TextField_Distance" layoutX="14.0" layoutY="13.0" prefHeight="34.0" prefWidth="62.0" text="100"/>
+    <Label layoutX="90.0" layoutY="13.0" prefHeight="34.0" prefWidth="159.0" text=": Maximum distance between cells in the same zone" textAlignment="CENTER" wrapText="true"/>
+    <Button layoutX="15.0" layoutY="196.0" mnemonicParsing="false" onAction="#displayNecrosisRate" prefHeight="34.0" prefWidth="95.0" text="Calculate"/>
+    <Label fx:id="Label_NecrosisRate" alignment="CENTER" layoutX="115.0" layoutY="170.0" prefHeight="87.0" prefWidth="270.0" text="Results :" textAlignment="CENTER"/>
+    <Circle fill="WHITE" layoutX="241.0" layoutY="39.0" radius="9.0" stroke="BLACK" strokeType="INSIDE"/>
+    <Label alignment="CENTER" contentDisplay="CENTER" layoutX="231.0" layoutY="30.0" prefHeight="18.0" prefWidth="20.0" text="i" textFill="#0900ff">
+        <font>
+            <Font name="System Bold" size="12.0"/>
+        </font>
+        <tooltip>
+            <Tooltip text="The maximum distance between cells in the same zone refers to the farthest distance between any two cells within a cells area. Thus, two cells of the same type with a distance greater than this maximum distance cannot belong to the same zone." textAlignment="JUSTIFY" wrapText="true"/>
+        </tooltip>
+    </Label>
+    <TextField fx:id="TextField_Name" layoutX="14.0" layoutY="74.0" prefHeight="26.0" prefWidth="247.0"/>
+    <Button layoutX="237.0" layoutY="122.0" mnemonicParsing="false" onAction="#chooseFolder" text="..."/>
+    <TextField fx:id="TextField_FolderPath" layoutX="15.0" layoutY="122.0" prefHeight="26.0" prefWidth="220.0"/>
+    <Label layoutX="271.0" layoutY="78.0" text=":   File's Name"/>
+    <Label layoutX="271.0" layoutY="126.0" prefHeight="18.0" prefWidth="82.0" text=":   Folder's Path"/>
+</AnchorPane>

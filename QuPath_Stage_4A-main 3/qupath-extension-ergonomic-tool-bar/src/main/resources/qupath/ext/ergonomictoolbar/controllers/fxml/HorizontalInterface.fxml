@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <HBox alignment="CENTER" fillHeight="false" spacing="2.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <!--
+      <Button maxHeight="60.0" maxWidth="60.0" minHeight="60.0" minWidth="60.0" mnemonicParsing="false" onAction="#createPolygonalAnnotation" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: white;">
+         <graphic>
+            <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+               <Image url="@../img/polygon.png" />
+            </ImageView>
+         </graphic>
+         <tooltip><Tooltip text="polygone de forme libre" /></tooltip>
+      </Button> -->
+      <Button maxHeight="60.0" maxWidth="60.0" minHeight="60.0" minWidth="60.0" mnemonicParsing="false" onAction="#createAutoAnnotation" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: white;">
+         <graphic>
+            <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+               <Image url="@../img/detourage.png" />
+            </ImageView>
+         </graphic>
+         <tooltip><Tooltip text="Détourage automatique" /></tooltip>
+      </Button>
+      <Button alignment="CENTER" mnemonicParsing="false" style="-fx-background-color: white;" textAlignment="CENTER" textFill="WHITE">
+         <graphic>
+            <ImageView fitHeight="50.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/pinceau.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <tooltip><Tooltip text="pinceau pour sélectionner plusieurs tuiles au passage de la souris" /></tooltip>
+      </Button>
+      <Button layoutX="291.0" layoutY="15.0" maxHeight="60.0" maxWidth="60.0" minHeight="60.0" minWidth="60.0" mnemonicParsing="false" onAction="#createRectangularAnnotation" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: white;">
+         <graphic>
+            <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+               <Image url="@../img/free_size.png" />
+            </ImageView>
+         </graphic>
+         <tooltip><Tooltip text="rectangle de taille libre" /></tooltip>
+      </Button>
+      <VBox alignment="CENTER" fillWidth="false">
+         <HBox alignment="CENTER">
+            <children>
+               <Button alignment="CENTER" maxHeight="25.0" maxWidth="8.0" minHeight="25.0" minWidth="8.0" mnemonicParsing="false" onAction="#leftArrowClick" prefHeight="25.0" prefWidth="8.0">
+                  <graphic>
+                     <ImageView fitHeight="25.0" fitWidth="4.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@../img/left_arrow.png" />
+                     </ImageView>
+                  </graphic>
+               </Button>
+               <Button maxHeight="40.0" maxWidth="40.0" minHeight="40.0" minWidth="40.0" mnemonicParsing="false" onAction="#createPredefinedSizedAnnotation" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: white;">
+                  <graphic>
+                     <ImageView fx:id="ImageView_Predefined_Shape" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@../img/square.png" />
+                     </ImageView>
+                  </graphic>
+                  <tooltip><Tooltip text="annotation prédéfinie" /></tooltip>
+               </Button>
+               <Button alignment="CENTER" maxHeight="25.0" maxWidth="8.0" minHeight="25.0" minWidth="8.0" mnemonicParsing="false" onAction="#rightArrowClick" prefHeight="25.0" prefWidth="8.0">
+                  <graphic>
+                     <ImageView fitHeight="25.0" fitWidth="4.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@../img/right_arrow.png" />
+                     </ImageView>
+                  </graphic>
+                  <HBox.margin>
+                     <Insets />
+                  </HBox.margin>
+               </Button>
+            </children>
+            <VBox.margin>
+               <Insets />
+            </VBox.margin>
+         </HBox>
+         <ComboBox fx:id="ComboBox_Areas" maxHeight="25.0" maxWidth="60.0" minHeight="25.0" minWidth="60.0" prefHeight="25.0" prefWidth="60.0" promptText="0.5">
+            <VBox.margin>
+               <Insets bottom="2.0" />
+            </VBox.margin></ComboBox>
+      </VBox>
+      <VBox alignment="CENTER">
+         <children>
+            <Button alignment="CENTER" maxHeight="30.0" maxWidth="60.0" minHeight="30.0" minWidth="60.0" mnemonicParsing="false" onAction="#changeAnnotationNameAndDescription" prefHeight="30.0" prefWidth="60.0" text="Set Name" textAlignment="CENTER" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="10.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="5.0" top="2.0" />
+               </VBox.margin>
+               <tooltip><Tooltip text="changer le nom de l'annotation et sa description" /></tooltip>
+            </Button>
+            <Button alignment="CENTER" maxHeight="30.0" maxWidth="60.0" minHeight="30.0" minWidth="60.0" mnemonicParsing="false" onAction="#changeAnnotationClass" prefHeight="30.0" prefWidth="60.0" text="Set Class" textAlignment="CENTER" wrapText="true">
+               <graphic>
+                  <ImageView pickOnBounds="true" preserveRatio="true" />
+               </graphic>
+               <font>
+                  <Font name="System Bold" size="10.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="2.0" />
+               </VBox.margin>
+               <tooltip><Tooltip text="changer la classe de l'annotation" /></tooltip>
+            </Button>
+         </children>
+         <padding>
+            <Insets left="10.0" />
+         </padding>
+      </VBox>
+      <VBox maxHeight="60.0" maxWidth="30.0" minHeight="60.0" minWidth="30.0" prefHeight="60.0" prefWidth="30.0">
+         <Button maxHeight="30.0" maxWidth="30.0" minHeight="30.0" minWidth="30.0" mnemonicParsing="false" onAction="#toggleAnnotationNameDisplay" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: white;">
+            <graphic>
+               <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                  <Image url="@../img/names.png" />
+               </ImageView>
+            </graphic>
+            <tooltip><Tooltip text="afficher ou cacher le nom des annotations" /></tooltip>
+         </Button>
+         <Button maxHeight="30.0" maxWidth="30.0" minHeight="30.0" minWidth="30.0" mnemonicParsing="false" onAction="#toggleAnnotationsFilling" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: white;">
+            <graphic>
+               <ImageView fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                  <Image url="@../img/overlay.png" />
+               </ImageView>
+            </graphic>
+            <tooltip><Tooltip text="colorer les annotations ou non" /></tooltip>
+         </Button>
+         <padding>
+            <Insets left="10.0" />
+         </padding>
+      </VBox>
+      <Button layoutX="513.0" layoutY="15.0" maxHeight="50.0" maxWidth="50.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" onAction="#toggleAnnotationLock" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: white;">
+         <graphic>
+            <ImageView fx:id="ImageView_LockStatus" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+               <Image url="@../img/closed_lock.png" />
+            </ImageView>
+         </graphic>
+         <HBox.margin>
+            <Insets left="10.0" />
+         </HBox.margin>
+         <tooltip><Tooltip text="verrouillage de l'annotation" /></tooltip>
+      </Button>
+      <VBox alignment="CENTER" maxHeight="50.0" maxWidth="50.0" minHeight="50.0" minWidth="50.0" prefHeight="50.0" prefWidth="50.0">
+         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Area :" textAlignment="CENTER" wrappingWidth="55.0">
+            <font>
+               <Font name="System Bold" size="14.0" />
+            </font>
+         </Text>
+         <Label fx:id="Label_Area" text="..." textAlignment="CENTER">
+            <font>
+               <Font size="14.0" />
+            </font>
+         </Label>
+         <Label fx:id="Label_AreaMagnitude" layoutX="10.0" layoutY="50.0" textAlignment="CENTER">
+            <font>
+               <Font size="14.0" />
+            </font>
+         </Label>
+         <padding>
+            <Insets left="5.0" />
+         </padding>
+      </VBox>
+      <VBox alignment="CENTER" maxHeight="50.0" maxWidth="50.0" minHeight="50.0" minWidth="50.0" prefHeight="50.0" prefWidth="50.0">
+         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Area Percentage :" textAlignment="CENTER" wrappingWidth="65.0">
+            <font>
+               <Font name="System Bold" size="10.0" />
+            </font>
+         </Text>
+         <Label fx:id="Label_Area_Percentage" alignment="CENTER" prefHeight="20.0" prefWidth="65.0" text="..." textAlignment="CENTER">
+            <font>
+               <Font size="14.0" />
+            </font>
+         </Label>
+         <Label fx:id="Label_Area_Percentage_Sign" alignment="CENTER" prefHeight="20.0" prefWidth="65.0" textAlignment="CENTER">
+            <font>
+               <Font size="14.0" />
+            </font>
+         </Label>
+         <padding>
+            <Insets top="10.0" />
+         </padding>
+      </VBox>
+      <VBox alignment="CENTER">
+         <children>
+            <Button fx:id="Button_IA" maxHeight="30.0" maxWidth="60.0" minHeight="30.0" minWidth="60.0" mnemonicParsing="false" onAction="#showManagementIA" prefHeight="30.0" prefWidth="60.0" text="show IA">
+               <font>
+                  <Font name="System Bold" size="10.0" />
+               </font>
+               <tooltip><Tooltip text="montre/cache l'interface IA"/></tooltip>
+            </Button>
+         </children>
+         <padding>
+            <Insets left="10.0" />
+         </padding>
+      </VBox>
+      <GridPane>
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" />
+            <ColumnConstraints hgrow="SOMETIMES" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints vgrow="SOMETIMES" />
+            <RowConstraints vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Button fx:id="Button_ModelManagement" alignment="CENTER" managed="false" maxHeight="30.0" maxWidth="55.0" minHeight="30.0" minWidth="55.0" mnemonicParsing="false" onAction="#modelManagement" prefHeight="30.0" prefWidth="55.0" text="Model Management" textAlignment="CENTER" visible="false" wrapText="true" GridPane.rowIndex="1">
+               <font>
+                  <Font name="System Bold" size="7.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets top="5.0" />
+               </GridPane.margin>
+               <tooltip><Tooltip text="model management" /></tooltip>
+            </Button>
+            <Button fx:id="Button_MergeAnnotation" managed="false" maxHeight="30.0" maxWidth="55.0" minHeight="30.0" minWidth="55.0" mnemonicParsing="false" onAction="#mergeTumorAndNecrosis" prefHeight="30.0" prefWidth="55.0" text="Merge Annotations" textAlignment="CENTER" visible="false" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="7.0" />
+               </font>
+               <tooltip><Tooltip text="merge tumor necrosis" /></tooltip>
+            </Button>
+            <Button fx:id="Button_AutomaticAnnotation" managed="false" maxHeight="30.0" maxWidth="5.0" minHeight="30.0" minWidth="55.0" mnemonicParsing="false" onAction="#automaticAnnotation" prefHeight="30.0" prefWidth="55.0" text="Automatic Annotation" textAlignment="CENTER" visible="false" wrapText="true" GridPane.columnIndex="1">
+               <font>
+                  <Font name="System Bold" size="8.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets left="5.0" />
+               </GridPane.margin>
+               <tooltip><Tooltip text="automatic annotation" /></tooltip>
+            </Button>
+            <Button fx:id="Button_ExportTiles" managed="false" maxHeight="30.0" maxWidth="55.0" minHeight="30.0" minWidth="54.0" mnemonicParsing="false" onAction="#exportTile" prefHeight="30.0" prefWidth="55.0" text="Export tiles" textAlignment="CENTER" visible="false" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <font>
+                  <Font name="System Bold" size="8.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets left="5.0" top="5.0" />
+               </GridPane.margin>
+               <tooltip><Tooltip text="export tiles" /></tooltip>
+            </Button>
+         </children>
+         <padding>
+            <Insets left="10.0" />
+         </padding>
+      </GridPane>
+      <VBox>
+         <Text fx:id="Text_Necrose" managed="false" strokeType="OUTSIDE" strokeWidth="0.0" text="Necrosis Rate :" visible="false">
+            <font>
+               <Font name="System Bold" size="10.0" />
+            </font>
+            <VBox.margin>
+               <Insets left="5.0" />
+            </VBox.margin>
+         </Text>
+         <Label fx:id="Label_Rate" alignment="CENTER" contentDisplay="CENTER" managed="false" prefHeight="29.0" prefWidth="62.0" text="..." visible="false">
+            <font>
+               <Font name="System Bold" size="12.0" />
+            </font>
+         </Label>
+      </VBox>
+      <VBox maxHeight="60.0" maxWidth="30.0" minHeight="60.0" minWidth="30.0" prefHeight="60.0" prefWidth="30.0">
+         <Button maxHeight="30.0" maxWidth="30.0" minHeight="30.0" minWidth="30.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: white;">
+            <graphic>
+               <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true">
+                  <Image url="@../img/save.png" />
+               </ImageView>
+            </graphic>
+            <tooltip><Tooltip text="sauvegarder" /></tooltip>
+         </Button>
+         <Button maxHeight="30.0" maxWidth="30.0" minHeight="30.0" minWidth="30.0" mnemonicParsing="false" onAction="#toggleToolbarOrientation" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: white;">
+            <graphic>
+               <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                  <Image url="@../img/turn_vertically.png" />
+               </ImageView>
+            </graphic>
+            <tooltip><Tooltip text="tourner la toolbar" /></tooltip>
+         </Button>
+         <padding>
+            <Insets left="5.0" />
+         </padding>
+      </VBox>
+      <opaqueInsets>
+         <Insets />
+      </opaqueInsets>
+      <padding>
+         <Insets bottom="5.0" right="5.0" top="5.0" />
+      </padding>
+   </HBox>
+</AnchorPane>

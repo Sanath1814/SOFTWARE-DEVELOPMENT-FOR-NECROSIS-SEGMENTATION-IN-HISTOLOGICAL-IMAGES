@@ -1,0 +1,7 @@
+-Lancer une image sous QuPath.
+-Détourer la zone tumorale
+-Cliquer sur le bouton "Automatic annotation"
+-Une fois l'exécution terminée, sélectionner avec le pinceau les tuiles qui n'ont pas été bien détectées
+-Cliquer ensuite sur le bouton "Export Tiles", puis sélectionner le dossier "datasets"
+-Lancer le logiciel Viewer.exe, et trier toutes les tuiles du dataset
+-Une fois le tri terminé, lancer un nouvel apprentissage du modèle
